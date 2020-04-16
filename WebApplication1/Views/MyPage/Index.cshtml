@@ -1,0 +1,116 @@
+﻿@model IEnumerable<object>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    List<Scaffolding.Models.Country> lstCounry = Model.ToList()[0] as List<Scaffolding.Models.Country>;
+    List<Scaffolding.Models.Creator> lstCreator = Model.ToList()[1] as List<Scaffolding.Models.Creator>;
+    List<Scaffolding.Models.Client> lstClient = Model.ToList()[2] as List<Scaffolding.Models.Client>;
+    List<Scaffolding.Models.Employee> lstEmployee = Model.ToList()[3] as List<Scaffolding.Models.Employee>;
+    List<Scaffolding.Models.Order> lstOrder = Model.ToList()[4] as List<Scaffolding.Models.Order>;
+    List<Scaffolding.Models.Post> lstPost = Model.ToList()[5] as List<Scaffolding.Models.Post>;
+    List<Scaffolding.Models.Product> lstProduct = Model.ToList()[6] as List<Scaffolding.Models.Product>;
+    List<Scaffolding.Models.Provider> lstProvider = Model.ToList()[7] as List<Scaffolding.Models.Provider>;
+    List<Scaffolding.Models.Sending> lstSending = Model.ToList()[8] as List<Scaffolding.Models.Sending>;
+    List<Scaffolding.Models.TypeProduct> lstType = Model.ToList()[9] as List<Scaffolding.Models.TypeProduct>;
+}
+<h2>Country</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in lstCounry)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<h2>Creators</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                CountryId
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in lstCreator)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Country.Id
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Clients</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Surname
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Patronymic
+            </th>
+            <th>
+                Mobile_Number
+            </th>
+            <th>
+                Email
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in lstClient)
+        {
+        <tr>
+            <td>
+                @item.Surname
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Patronymic
+            </td>
+            <td>
+                @item.Mobile_Number
+            </td>
+            <td>
+                @item.Email
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
